@@ -7,7 +7,7 @@ st.title('COVID-19 2020 Data visualisation')
 import pandas as pd
 import numpy as np
 import zipfile
-import plotly.express as px
+
 import plotly.graph_objects as go
 
 from iso3166 import countries
