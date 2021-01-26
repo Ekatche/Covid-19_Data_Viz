@@ -1,4 +1,3 @@
-conda install -c plotly plotly_express==0.4.1
 
 import streamlit as st
 
