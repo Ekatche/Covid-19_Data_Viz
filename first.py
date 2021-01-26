@@ -14,26 +14,12 @@ import plotly.graph_objects as go
 
 from iso3166 import countries
 import pycountry
-import ipywidgets as ipw
-from ipywidgets import *
-
-# import matplotlib.ticker as ticker
-# import matplotlib.animation as animation
-# import matplotlib.colors as mc
-# import colorsys
-# from IPython.display import HTML
-# from datetime import datetime
-# from random import randint
-import matplotlib
-
-matplotlib.rcParams['animation.embed_limit'] = 2 ** 128
 
 import seaborn as sns
 from geopy.exc import GeocoderTimedOut
 from geopy.geocoders import Nominatim
 
 st.header('World Graphs')
-
 
 with zipfile.ZipFile('coronavirus.zip', 'r') as zip_ref:
     zip_ref.extractall('corona')
