@@ -1,4 +1,4 @@
-pip install plotly==4.14.3
+pip instal plotly==4.14.3
 import streamlit as st
 
 st.title('COVID-19 2020 Data visualisation')
