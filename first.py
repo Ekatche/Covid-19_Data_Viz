@@ -8,13 +8,6 @@ import pandas as pd
 import numpy as np
 import zipfile
 
-from iso3166 import countries
-import pycountry
-
-import seaborn as sns
-from geopy.exc import GeocoderTimedOut
-from geopy.geocoders import Nominatim
-
 st.header('World Graphs')
 
 with zipfile.ZipFile('coronavirus.zip', 'r') as zip_ref:
