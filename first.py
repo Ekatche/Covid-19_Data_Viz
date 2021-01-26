@@ -8,8 +8,6 @@ import pandas as pd
 import numpy as np
 import zipfile
 
-import plotly.graph_objects as go
-
 from iso3166 import countries
 import pycountry
 
