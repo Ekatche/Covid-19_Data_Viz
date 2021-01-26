@@ -1,5 +1,5 @@
 import streamlit as st
-
+pip install plotly
 st.title('COVID-19 2020 Data visualisation')
 
 
