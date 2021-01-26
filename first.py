@@ -4,10 +4,7 @@ st.title('COVID-19 2020 Data visualisation')
 
 
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
-from datetime import datetime
-from datetime import date, time, timedelta
 import zipfile
 import plotly.express as px
 import plotly.graph_objects as go
