@@ -115,7 +115,7 @@ st.plotly_chart(fig3)
 #Graph
 fig4 = px.scatter(df_C4, x='Confirmed', y='% of deaths', size='% of deaths', color='Country_Region',
                   title='Ranking of countries according to the % of deaths <br>'
-                  '<math>\frac{"nb of deaths"}{"Confirmed cases"}</math>')
+                  '&fracDeathsConfirmed;')
 st.plotly_chart(fig4)
 #Graph
 fig5 = px.treemap(df_C3, path=['Country_Region'], values='Confirmed', title='World TreeMap - Confirmed cases')
