@@ -114,7 +114,7 @@ fig3 = px.scatter(df_C1, x='Confirmed', y='Recovered', size='Recovered',
 st.plotly_chart(fig3)
 #Graph
 fig4 = px.scatter(df_C4, x='Confirmed', y='% of deaths', size='% of deaths', color='Country_Region',
-                  title='Ranking of countries according to the % of deaths')
+                  title='Ranking of countries according to the % of deaths (nb of death/nb of confirmed cases')
 st.plotly_chart(fig4)
 #Graph
 fig5 = px.treemap(df_C3, path=['Country_Region'], values='Confirmed', title='World TreeMap - Confirmed cases')
@@ -250,7 +250,7 @@ for i in range(len(seuil)):
             sizemode='area'), name='{} - {}'.format(aff[0], aff[1])))
 
 fig6.update_layout(
-    title_text='2020 - Covid confirmed cases in the US (legends in million) <br>(Click legend to toggle traces)',
+    title_text='2020 - Covid confirmed cases in the US (legend in million) <br>(Click legend to toggle traces)',
     showlegend=True,
     geo=dict(
         scope='usa', landcolor='rgb(217,217,210)'))
