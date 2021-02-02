@@ -125,7 +125,6 @@ df0['Observation_date'] = df0['Observation_date'].dt.strftime('%m/%Y')
 df1 = df0.groupby(['Observation_date'])[['confirmed', 'recovered', 'deaths']].sum().reset_index()
 df1.sort_values(by='Observation_date')
 
-st.write(df1)
 
 temp = df1
 temp = temp.melt(id_vars="Observation_date", value_vars=['deaths', 'recovered', 'confirmed'], var_name='Case',
