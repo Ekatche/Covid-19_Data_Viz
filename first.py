@@ -256,13 +256,14 @@ def findGeocode(Province_state):
     try:
         # Specify the user_agent as your
         # app name it should not be none
-        geolocator = Nominatim(user_agent="your_app_name")
+        geolocator = Nominatim(user_agent="geoapiExercises")
 
         return geolocator.geocode(Province_state)
     except GeocoderTimedOut:
         return findGeocode(Province_state)
     # each value from city column
-
+    except GeocoderUnavailable: 
+        pass
 
 # will be fetched and sent to
 # function find_geocode
@@ -270,7 +271,6 @@ def findGeocode(Province_state):
 for i in (df_USA["Province_state"]):
 
     if findGeocode(i) != None:
-
         loc = findGeocode(i)
 
         # coordinates returned from
