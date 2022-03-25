@@ -5,7 +5,7 @@ import zipfile
 import plotly.express as px
 import plotly.graph_objects as go
 import pycountry
-from geopy.exc import GeocoderTimedOut
+from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
 from geopy.geocoders import Nominatim
 
 st.title('COVID-19 2020 Data visualisation')
@@ -244,7 +244,7 @@ df_USA=df_USA.drop(196,axis=0)
 longitude = []
 latitude = []
 
-geolocator = Nominatim(user_agent="geoapiExercises")
+#geolocator = Nominatim(user_agent="geoapiExercises")
 
 
 
