@@ -244,7 +244,7 @@ df_USA=df_USA.drop(196,axis=0)
 longitude = []
 latitude = []
 
-#geolocator = Nominatim(user_agent="geoapiExercises")
+geolocator = Nominatim(user_agent="geoapiExercises")
 
 
 
@@ -256,13 +256,13 @@ def findGeocode(Province_state):
     try:
         # Specify the user_agent as your
         # app name it should not be none
-        geolocator = Nominatim(user_agent="geoapiExercises")
-
-        return geolocator.geocode(Province_state)
+        find_loc = geolocator.geocode(Province_state)
+        return find_loc
     except GeocoderTimedOut:
         return findGeocode(Province_state)
     # each value from city column
     except GeocoderUnavailable: 
+        # if the location is not found return none
         pass
 
 # will be fetched and sent to
