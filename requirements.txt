@@ -3,6 +3,6 @@ pycountry==20.7.3
 plotly==5.1.0
 pandas==1.0.5
 geopy==2.2.0
-numpy==1.18.5
+numpy<=1.18.5
 geocoder==1.38.1
 iso3166==1.0.1
