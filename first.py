@@ -332,12 +332,12 @@ df_md_gbd_1=dfose.copy()
 
 df_md_gbd_1['observation_date'] = pd.to_datetime(df_md_gbd_1['Observation_date'])
 # st.dataframe(df_md_gbd_1)
-# df_md_gbd_1['observation_date'] = df_md_gbd_1['observation_date'].dt.strftime('%m/%Y')]
-# df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', ).sum().groupby(level=0)[['confirmed','deaths','recovered']].cumsum().sort_values(
-#     by='observation_date').reset_index()
+df_md_gbd_1['observation_date'] = df_md_gbd_1['observation_date'].dt.strftime('%m/%Y')]
+df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region','observation_date'] ).sum().groupby(level=0)[['confirmed','deaths','recovered']].cumsum().sort_values(
+    by='observation_date').reset_index()
 
 # Group by 'Country_Region' and 'observation_date' and sum the numeric columns
-df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', df_md_gbd_1['observation_date'].dt.strftime('%m/%Y')])[['confirmed','deaths','recovered']].sum().reset_index()
+# df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', df_md_gbd_1['observation_date'].dt.strftime('%m/%Y')])[['confirmed','deaths','recovered']].sum().reset_index()
 
 
 df_md_gbd_1['iso_alpha'] = ''
