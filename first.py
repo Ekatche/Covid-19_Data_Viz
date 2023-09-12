@@ -337,7 +337,7 @@ df_md_gbd_1['observation_date'] = df_md_gbd_1['observation_date'].dt.strftime('%
 #     by='observation_date').reset_index()
 
 # Calculate the cumulative sum within each group
-df_md_gbd_1['cumulative_sum'] = df_md_gbd_1.groupby(level=0)['Country_Region', 'observation_date'].cumsum()
+df_md_gbd_1['cumulative_sum'] = df_md_gbd_1.groupby(level=0)[['Country_Region', 'observation_date']].cumsum()
 # Reset the index to get the columns back
 df_md_gbd_1 = df_md_gbd_1.reset_index()
 
