@@ -248,9 +248,8 @@ df_USA=df_USA.drop(196,axis=0)
 longitude = []
 latitude = []
 
-geolocator = Nominatim(user_agent="geoapiExercises")
-
-
+# geolocator = Nominatim(user_agent="geoapiExercises")
+geolocator = Nominatim(user_agent="streamlitApp")
 
 @st.cache
 def findGeocode(Province_state):
