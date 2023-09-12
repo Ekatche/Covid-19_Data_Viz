@@ -333,8 +333,13 @@ df_md_gbd_1=dfose.copy()
 df_md_gbd_1['observation_date'] = pd.to_datetime(df_md_gbd_1['Observation_date'])
 df_md_gbd_1['observation_date'] = df_md_gbd_1['observation_date'].dt.strftime('%m/%Y')
 
-df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', 'observation_date']).sum().groupby(level=0).cumsum().sort_values(
-    by='observation_date').reset_index()
+# df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', 'observation_date']).sum().groupby(level=0).cumsum().sort_values(
+#     by='observation_date').reset_index()
+
+# Calculate the cumulative sum within each group
+df_md_gbd_1['cumulative_sum'] = df_md_gbd_1.groupby(level=0)['Country_Region', 'observation_date'].cumsum()
+# Reset the index to get the columns back
+df_md_gbd_1 = df_md_gbd_1.reset_index()
 
 df_md_gbd_1['iso_alpha'] = ''
 for k, v in d_country_code.items():
