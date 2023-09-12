@@ -15,7 +15,7 @@ with zipfile.ZipFile('coronavirus.zip', 'r') as zip_ref:
     zip_ref.extractall('corona')
 
 
-@st.cache
+@st.cache(ttl=60 * 60)
 def Load_data(nrows):
     df = pd.read_csv('corona/covid_19_data.csv', sep=',', index_col='SNo', nrows=nrows)
     df.columns = ['Observation_date', 'Province_state', 'Country_Region', 'Last_Update', 'Confirmed', 'Deaths',
@@ -128,7 +128,11 @@ df1 = df0.groupby(['Observation_date'])[['confirmed', 'recovered', 'deaths']].su
 df1.sort_values(by='Observation_date')
 
 
+
 temp = df1
+del df0
+del df1
+
 temp = temp.melt(id_vars="Observation_date", value_vars=['deaths', 'recovered', 'confirmed'], var_name='Case',
                  value_name='Number of cases')
 fig = px.area(temp, x="Observation_date", y="Number of cases", color='Case', height=400,
