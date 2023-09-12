@@ -333,7 +333,7 @@ df_md_gbd_1=dfose.copy()
 df_md_gbd_1['observation_date'] = pd.to_datetime(df_md_gbd_1['Observation_date'])
 df_md_gbd_1['observation_date'] = df_md_gbd_1['observation_date'].dt.strftime('%m/%Y')
 
-df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', 'observation_date']).sum().groupby(level=0).sum().sort_values(
+df_md_gbd_1 = df_md_gbd_1.groupby(['Country_Region', 'observation_date']).sum().groupby(level=0).cumsum().sort_values(
     by='observation_date').reset_index()
 
 df_md_gbd_1['iso_alpha'] = ''
